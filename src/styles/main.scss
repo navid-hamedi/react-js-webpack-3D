@@ -1,0 +1,10 @@
+// Background pallette
+$primary-background: #1A1A14;
+
+// Font colors
+$primary-font-color: #eee;
+
+html, body {
+    background: $primary-background;
+    color: $primary-font-color;
+}

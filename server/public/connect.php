@@ -1,0 +1,4 @@
+<?php
+// THIS IS ONLY USED TO TEST SERVER SIDE PHP SCRIPTS
+
+echo "Hello from PHP!";
