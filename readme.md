@@ -1,9 +1,13 @@
 # reactjs project
-PHP integrated to tailored ReactJS project.
-node_modules not included.
+PHP integrated to tailored ReactJS project. <br>
+SASS for styling. <br>
+3D "ThreeJS" for extra touch. <br>
+node_modules not included. <br>
 
 # languages that this project supports
-PHP SASS
+PHP <br>
+SASS <br>
+3D<br>
 
 # steps for setting up react-js-webpack-base
 1. create new folder inside of xampp/htdocs/ folder using mkdir command
@@ -14,7 +18,4 @@ PHP SASS
 6. npx webpack serve
 
 # goals for this git repo
-1. include sass to webpack - done
-2. fix php problem - done
-3. next finish setting up webpack, images and etc. - done
-4. 3D models
+1. 3D models
