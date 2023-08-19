@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import model from '../assets/models/source/model.gltf';
 import 'three/examples/jsm/controls/OrbitControls'; // Optional for camera controls
 import '../styles/ModelViewer.scss'; // Optional styles
 
@@ -20,7 +21,7 @@ const ModelViewer = () => {
     const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     const cube = new THREE.Mesh( geometry, material );
     
-    camera.position.z = 3;
+    camera.position.z = 5;
 
     /* CUBE */ /* 
     scene.add( cube );
@@ -37,11 +38,13 @@ const ModelViewer = () => {
 
     /* GLTDLOADER */ /* */
     const loader = new GLTFLoader();
-    loader.load( 'C:/xampp/htdocs/react-js-webpack-3D/src/assets/models/source/model.gltf', function ( gltf ) {
+    loader.load( model, function ( gltf ) {
 
       scene.add( gltf.scene );
       function animate() {
         requestAnimationFrame( animate );
+        scene.rotation.x += 0.01;
+	      scene.rotation.y += 0.01;
         renderer.render( scene, camera );
       }
 
