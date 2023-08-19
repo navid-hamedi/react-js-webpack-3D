@@ -31,6 +31,14 @@ module.exports = {
             test: /\.(png|jpg|jpeg|gif|svg)$/i,
             type: 'asset/resource',
         },
+        {
+            test: /\.(glb|gltf)$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                },
+            ],
+        },
         ],
     },
     plugins: [
