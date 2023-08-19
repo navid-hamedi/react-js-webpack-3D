@@ -3,44 +3,31 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import model from '../assets/models/source/model.gltf';
 import 'three/examples/jsm/controls/OrbitControls'; // Optional for camera controls
-import '../styles/ModelViewer.scss'; // Optional styles
+import '../styles/ModelViewer.scss';
 
 const ModelViewer = () => {
   useEffect(() => {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-    
-    scene.background = new THREE.Color(0xff00ff);
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
-
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    const cube = new THREE.Mesh( geometry, material );
     
-    camera.position.z = 5;
+    scene.background = new THREE.Color(0xeeeeee);
 
-    /* CUBE */ /* 
-    scene.add( cube );
-    function animate() {
-      requestAnimationFrame( animate );
+    const light = new THREE.PointLight( 0xffffff, 1, 100000 );
+    light.position.set( 50, 50, 50 );
+    light.castShadow = true;
+    scene.add( light );
 
-      cube.rotation.x += 0.01;
-	    cube.rotation.y += 0.01;
+    camera.position.z = 1;
 
-      renderer.render( scene, camera );
-    }
-    animate();
-    */
-
-    /* GLTDLOADER */ /* */
     const loader = new GLTFLoader();
     loader.load( model, function ( gltf ) {
-
       scene.add( gltf.scene );
+
       function animate() {
         requestAnimationFrame( animate );
         scene.rotation.x += 0.01;

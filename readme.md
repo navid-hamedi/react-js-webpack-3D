@@ -7,7 +7,7 @@ node_modules not included. <br>
 # languages that this project supports
 PHP <br>
 SASS <br>
-3D<br>
+3D <br>
 
 # steps for setting up react-js-webpack-base
 1. create new folder inside of xampp/htdocs/ folder using mkdir command
@@ -15,7 +15,4 @@ SASS <br>
 3. git pull https://github.com/neanix/react-js-webpack-base.git
 4. codium .
 5. npm install
-6. npx webpack serve
-
-# goals for this git repo
-1. 3D models
+6. npm start
